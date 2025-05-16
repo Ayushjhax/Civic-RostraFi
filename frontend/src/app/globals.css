@@ -1,0 +1,265 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Additional utilities to prevent flickering */
+@layer utilities {
+  .backface-hidden {
+    -webkit-backface-visibility: hidden;
+  }
+  .transform-translate3d {
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+  .no-transformorigin {
+    transform-origin: unset;
+  }
+  .transition-all-300 {
+    transition: all 0.3s ease;
+  }
+  .will-change-transform {
+    will-change: transform;
+  }
+  .will-change-opacity {
+    will-change: opacity;
+  }
+  .transition-bg {
+    transition: background-color 0.2s ease;
+  }
+  .hover-scale-105 {
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+  .active-scale-95 {
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+  .glow-shadow {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  }
+  .active-glow-shadow {
+    box-shadow: 0 0 25px rgba(192, 132, 252, 0.4);
+  }
+}
+
+/* Wallet adapter button and modal customization */
+.wallet-adapter-button {
+  @apply bg-purple-700 text-white px-4 py-2 rounded-lg font-semibold transition-all duration-200 ease-in-out;
+}
+
+.wallet-adapter-button:hover {
+  @apply bg-purple-800 opacity-95;
+}
+
+.wallet-adapter-button:not([disabled]):hover {
+  @apply bg-purple-800;
+}
+
+/* Modal styling */
+.wallet-adapter-modal-wrapper {
+  @apply bg-white rounded-lg shadow-lg;
+}
+
+.wallet-adapter-modal-button-close {
+  @apply bg-red-500 text-white px-2 py-1 rounded-full;
+}
+
+.wallet-adapter-modal-list-item {
+  @apply rounded-lg transition-all-300;
+}
+
+.wallet-adapter-modal-list-item:hover {
+  @apply bg-gray-100;
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+  .wallet-adapter-modal-wrapper {
+    @apply bg-gray-800 text-white;
+  }
+
+  .wallet-adapter-modal-list-item {
+    @apply bg-transparent;
+  }
+
+  .wallet-adapter-modal-list-item:hover {
+    @apply bg-gray-700;
+  }
+}
+
+/* Custom glow effects */
+.glow-hover:hover {
+  @apply glow-shadow;
+}
+
+.glow-active {
+  @apply active-glow-shadow;
+}
+
+/* Base styles */
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 10% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.progress-indicator {
+  @apply bg-gradient-to-r from-purple-500 to-pink-500;
+}
+
+@keyframes flyout {
+  0% {
+    transform: scale(0) translate(0, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) translate(50px, -50px);
+    opacity: 0;
+  }
+}
+.animate-flyout {
+  animation: flyout 1s ease-out forwards;
+}
+
+@keyframes lightSweep {
+  0% {
+    transform: translateX(-100%) skewY(-12deg);
+  }
+  100% {
+    transform: translateX(200%) skewY(-12deg);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-lightSweep {
+  animation: lightSweep 2s ease-out forwards;
+}
+
+/* Add this to your global CSS */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #111827; /* bg-gray-900 */
+  border-radius: 20px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #374151; /* bg-gray-700 */
+  border-radius: 20px;
+  transition: background 0.2s;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #4b5563; /* bg-gray-600 */
+}
+
+
+
+@keyframes glow {
+  0% { opacity: 0.1; }
+  50% { opacity: 0.3; }
+  100% { opacity: 0.1; }
+}
+
+.drop-shadow-glow {
+  filter: drop-shadow(0 0 12px rgba(192, 132, 252, 0.6));
+}
+
+.shadow-glow {
+  box-shadow: 0 0 40px -10px rgba(192, 132, 252, 0.4);
+}
+
+.bg-grid {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(255 255 255 / 0.05)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
+}
+
+.glow-effect {
+  animation: glow 3s infinite ease-in-out;
+}
+
+
+/* Add to your global CSS */
+.wobble-team-button {
+  padding: 1rem 2rem !important;
+  font-size: 1.25rem !important;
+  transition: all 0.3s ease !important;
+}
+
+.wobble-team-button.selected {
+  background: #48bb78 !important;
+  transform: scale(1.1) !important;
+  box-shadow: 0 0 25px rgba(72, 187, 120, 0.5) !important;
+}
