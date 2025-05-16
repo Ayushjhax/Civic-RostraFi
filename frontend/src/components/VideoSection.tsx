@@ -23,7 +23,7 @@ export const VideoSection = () => {
                 className="w-full h-full object-cover rounded-[2.5rem]"
                 controls
               >
-                <source src="https://res.cloudinary.com/djohjwkn6/video/upload/v1741290976/RostraFi_pvn5pk.mp4" />
+                <source src="https://res.cloudinary.com/djohjwkn6/video/upload/v1747426168/mmmm_dsdbdw.mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>
