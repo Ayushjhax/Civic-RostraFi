@@ -48,7 +48,7 @@ export default function ParticipantsDialog({
     try {
       // In a real app, replace with your actual API call
       const response = await fetch(
-        `http://127.0.0.1:3001/api/v1/compitition/tournaments/${tournamentId}/participants`
+        `https://be1.rostrafi.fun/api/v1/compitition/tournaments/${tournamentId}/participants`
       );
 
       const data = await response.json();

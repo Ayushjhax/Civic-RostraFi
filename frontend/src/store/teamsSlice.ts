@@ -95,7 +95,7 @@ export const saveTeams =
 
       const formattedTeams = formatTeamsForAPI(teamData.teams.sections);
 
-      const response = await fetch("http://127.0.0.1:3001/api/v1/userTeams", {
+      const response = await fetch("https://be1.rostrafi.fun/api/v1/userTeams", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

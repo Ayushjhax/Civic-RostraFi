@@ -210,7 +210,7 @@ export const fetchContent = () => async (dispatch: any) => {
   try {
     dispatch(setLoading(true));
 
-    const response = await fetch("http://127.0.0.1:3001/api/v1/content");
+    const response = await fetch("https://be1.rostrafi.fun/api/v1/content");
 
     const data = await response.json();
     console.log(data);
@@ -240,7 +240,7 @@ export const fetchUserVotes = (userId: string) => async (dispatch: any) => {
     dispatch(setLoading(true));
 
     const response = await fetch(
-      `http://127.0.0.1:3001/api/v1/vote/user/${userId}`
+      `https://be1.rostrafi.fun/api/v1/vote/user/${userId}`
     );
 
     const data = await response.json();
@@ -285,7 +285,7 @@ export const voteOnContent =
       // Then make the API call
       dispatch(setLoading(true));
 
-      const response = await fetch("http://127.0.0.1:3001/api/v1/vote", {
+      const response = await fetch("https://be1.rostrafi.fun/api/v1/vote", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -270,7 +270,7 @@ const TeamCard = ({ team, section, tournament }: TeamCardProps) => {
 
       // Make API call to fetch Twitter data
       const response = await fetch(
-        `http://127.0.0.1:3001/api/v1/userTeams/twitter/${tournamentId}/${twitterId}`
+        `https://be1.rostrafi.fun/api/v1/userTeams/twitter/${tournamentId}/${twitterId}`
       );
 
       if (!response.ok) {

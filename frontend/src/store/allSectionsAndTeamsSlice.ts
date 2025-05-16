@@ -28,7 +28,7 @@ export const { setAllSectionsAndTeams, setLoading, setError } =
 export const fetchAllSectionsAndTeams = () => async (dispatch: any) => {
   dispatch(setLoading(true));
   try {
-    const response = await fetch("http://127.0.0.1:3001/api/v1/sections");
+    const response = await fetch("https://be1.rostrafi.fun/api/v1/sections");
     const data = await response.json();
     console.log(data);
     dispatch(setAllSectionsAndTeams(data));

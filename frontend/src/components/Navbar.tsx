@@ -43,7 +43,7 @@ function Navbar({ className }: { className?: string }) {
         {/* Betting Menu Item */}
         <MenuItem setActive={setActive} active={active} item="Betting">
           <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="http://localhost:3000/bettings">
+            <HoveredLink href="https://rostrafi.fun/bettings">
               Bettings
             </HoveredLink>
             {/* Disabled items */}
@@ -73,7 +73,7 @@ function Navbar({ className }: { className?: string }) {
         {/* Leaderboard Menu Item */}
         <MenuItem setActive={setActive} active={active} item="Leaderboard">
           <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="http://localhost:3000/history">
+            <HoveredLink href="https://rostrafi.fun/history">
               Past Leaderboard
             </HoveredLink>
             {/* Disabled items */}

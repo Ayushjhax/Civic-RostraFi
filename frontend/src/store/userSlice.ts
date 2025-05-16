@@ -279,7 +279,7 @@ export const {
 export const userWalletConnect = (userId: string) => async (dispatch: any) => {
   try {
     dispatch(setLoading(true));
-    const response = await fetch("http://127.0.0.1:3001/api/v1/walletUser", {
+    const response = await fetch("https://be1.rostrafi.fun/api/v1/walletUser", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -317,7 +317,7 @@ export const userCurrentTournaments =
     try {
       dispatch(setLoading(true));
       const response = await fetch(
-        `http://127.0.0.1:3001/api/v1/userTeams/${walletUserId}/${userId}`
+        `https://be1.rostrafi.fun/api/v1/userTeams/${walletUserId}/${userId}`
       );
 
       const data = await response.json();
@@ -351,7 +351,7 @@ export const fetchUserTournaments =
     try {
       dispatch(setLoading(true));
       const response = await fetch(
-        `http://127.0.0.1:3001/api/v1/walletUser/${walletAddress}/tournaments`
+        `https://be1.rostrafi.fun/api/v1/walletUser/${walletAddress}/tournaments`
       );
 
       const data = await response.json();

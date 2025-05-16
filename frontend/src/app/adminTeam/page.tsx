@@ -48,7 +48,7 @@ export default function AdminDashboard() {
     setIsLoading(true);
     setError("");
     try {
-      const response = await fetch("http://127.0.0.1:3001/api/v1/sections");
+      const response = await fetch("https://be1.rostrafi.fun/api/v1/sections");
       if (!response.ok) throw new Error("Failed to fetch sections and teams");
       const data = await response.json();
       setSections(data || []);
@@ -63,7 +63,7 @@ export default function AdminDashboard() {
   const createSection = async () => {
     setError("");
     try {
-      const response = await fetch("http://127.0.0.1:3001/api/v1/sections", {
+      const response = await fetch("https://be1.rostrafi.fun/api/v1/sections", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name: sectionName }),
@@ -97,7 +97,7 @@ export default function AdminDashboard() {
 
     try {
       const response = await fetch(
-        `http://127.0.0.1:3001/api/v1/sections/${selectedSection._id}/teams`,
+        `https://be1.rostrafi.fun/api/v1/sections/${selectedSection._id}/teams`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
