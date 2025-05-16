@@ -3,7 +3,7 @@
 **Build influencer teams, compete for virality, and earn rewards in a Civic-secured blockchain ecosystem.**
 
 [![Excalidraw](https://img.shields.io/badge/Excalidraw-Diagram-green)](https://excalidraw.com/#json=uEOWgLwwqzrTE6Sncm_6d,_RVQtjxvT7bYJ08HubGpQA)
-[![Demo Video](https://img.shields.io/badge/Demo-Video-red)](https://x.com/Ayushjhax/status/1900184579803156752)
+[![Demo Video](https://img.shields.io/badge/Demo-Video-red)](https://x.com/Ayushjhax/status/1923426940653875433))
 [![Powered by Civic](https://img.shields.io/badge/Powered%20by-Civic-blue)](https://www.civic.com/)
 
 ---
